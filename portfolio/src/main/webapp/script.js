@@ -26,3 +26,21 @@ function addRandomGreeting() {
   const greetingContainer = document.getElementById('greeting-container');
   greetingContainer.innerText = greeting;
 }
+
+/**
+ * Adds a random quote to the page.
+ */
+function addRandomQuote() {
+  const quotes =
+      ["I'll make him an offer he can't refuse", 
+      "Great men are not born great, they grow great . . .", 
+      "A friend should always underestimate your virtues and an enemy overestimate your faults", 
+      "A man who doesn't spend time with his family can never be a real man"];
+
+  // Pick a random quote.
+  const quote = quotes[Math.floor(Math.random() * quotes.length)];
+
+  // Add it to the page.
+  const quoteContainer = document.getElementById('quote-container');
+  quoteContainer.innerText = quote;
+}
