@@ -44,3 +44,10 @@ function addRandomQuote() {
   const quoteContainer = document.getElementById('quote-container');
   quoteContainer.innerText = quote;
 }
+
+
+function getDataContentArrowFunctions() {
+  fetch('/data').then(response => response.text()).then((data) => {
+    document.getElementById('data-container').innerText = data;
+  });
+}
