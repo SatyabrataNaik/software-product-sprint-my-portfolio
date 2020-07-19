@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
   </head>
-  <body>
+  <body onload="getComments()">
     <div id="content">
       <h1>You have visited Satya's Portfolio</h1>
       <p>I am a CSE undergrad at IITB</p>
@@ -20,12 +20,17 @@
       <img src="/images/Sketchpad.jpg" style="max-width:100%;"/>
 
       
-      <h1>Json Data</h1>
-      <p>Click here to see Json data from the server:</p>
-      <button onclick="getJsonData()">Fetch Json data!</button>
-      <ul id="json-data-container"></ul>
-
-      <p> Thank You!</p>
+      <h1>Comments</h1>
+      
+      <form action="/data" method="POST">
+        <p>Let me know what you think:</p>
+        <textarea name="text-input">I like it!</textarea>
+        <br/><br/>
+        <input type="submit" />
+      </form>
+      <ul id="comments-container"></ul>
+        
+      <h1> Thank You!</h1>
     </div>
   </body>
 </html>
