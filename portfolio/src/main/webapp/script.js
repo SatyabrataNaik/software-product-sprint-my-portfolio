@@ -51,3 +51,22 @@ function getDataContentArrowFunctions() {
     document.getElementById('data-container').innerText = data;
   });
 }
+
+function getJsonData() {
+    fetch('/data')
+    .then(response => response.json())
+    .then((myObject) => {
+        const jsonDataListElement = document.getElementById('json-data-container');
+        jsonDataListElement.innerHTML = '';    
+        for (var i = 0; i < myObject.length; i++) {
+            var message = myObject[i];
+            jsonDataListElement.appendChild(createListElement(message));
+        }
+    });
+}
+
+function createListElement(text) {
+  const liElement = document.createElement('li');
+  liElement.innerText = text;
+  return liElement;
+}
