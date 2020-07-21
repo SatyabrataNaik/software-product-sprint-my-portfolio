@@ -20,16 +20,21 @@
       <img src="/images/Sketchpad.jpg" style="max-width:100%;"/>
 
       
-      <h1>Comments</h1>
+      <h1>Post your Comments</h1>
       
-      <form action="/data" method="POST">
+      <form id="comment-form" action="/data" method="POST">
         <p>Let me know what you think:</p>
         <textarea name="text-input">I like it!</textarea>
         <br/><br/>
         <input type="submit" />
       </form>
-      <ul id="comments-container"></ul>
-        
+
+      <p id="log-in-url">Login <a href="/log-in">here</a> to post comments.</p>
+      <p id="log-out-url">Logout <a href="/log-out">here</a>.</p>
+
+
+        <h1> Previous Comments</h1>
+        <ul id="comments-container"></ul>
       <h1> Thank You!</h1>
     </div>
   </body>

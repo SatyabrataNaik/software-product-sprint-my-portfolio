@@ -64,8 +64,27 @@ function getJsonData() {
         }
     });
 }
-
+function manageCommentSection() {
+  var commentForm = document.getElementById("comment-form");
+  var loginUrl = document.getElementById("log-in-url");
+  var logoutUrl = document.getElementById("log-out-url");
+  fetch('/log-in-status')
+  .then(response => response.json())
+  .then((statusString) => {
+      if (statusString === "OK") {
+          commentForm.style.display = "block";
+          loginUrl.style.display = "none";
+          logoutUrl.style.display = "block";
+      } else {  
+          commentForm.style.display = "none";
+          loginUrl.style.display = "block";
+          logoutUrl.style.display = "none";
+      }
+  });
+}
 function getComments() {
+    manageCommentSection();
+
     fetch('/data')
     .then(response => response.json())
     .then((myObject) => {
